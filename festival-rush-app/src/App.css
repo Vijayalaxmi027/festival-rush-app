@@ -1,0 +1,550 @@
+
+/* FESTIVAL RUSH — PREMIUM ELECTRONICS DASHBOARD */
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #eaf0ff;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bg: #0b1020;
+  --surface: #151d32;
+  --surface-2: #1a2640;
+  --border: #2b3855;
+  --text: #eaf0ff;
+  --muted: #9aa9c5;
+  --teal: #42e8d4;
+  --purple: #a78bfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg) !important;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text) !important;
+  background:
+    radial-gradient(ellipse at 15% 0%, #18324a 0%, transparent 38%),
+    radial-gradient(ellipse at 95% 20%, #241b48 0%, transparent 30%),
+    var(--bg) !important;
+}
+
+#root {
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+a {
+  color: var(--teal);
+}
+
+::selection {
+  color: #07111b;
+  background: var(--teal);
+}
+
+/* Main layout */
+.app,
+.main,
+.content {
+  color: var(--text) !important;
+  background: transparent !important;
+}
+
+.content {
+  padding: 28px !important;
+}
+
+.topbar {
+  color: var(--text) !important;
+  background: rgba(17, 26, 45, 0.96) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 8px 30px #03071340 !important;
+  backdrop-filter: blur(16px);
+}
+
+.top-title,
+h1,
+h2,
+h3,
+h4 {
+  color: #f2f6ff !important;
+  letter-spacing: -0.025em;
+}
+
+p,
+label,
+small {
+  color: var(--muted);
+}
+
+.muted,
+.subtitle,
+.description {
+  color: var(--muted) !important;
+}
+
+/* Welcome banner */
+.welcome {
+  color: #ffffff !important;
+  background:
+    radial-gradient(circle at 85% 15%, #8b5cf655, transparent 30%),
+    linear-gradient(120deg, #123348, #173b50 48%, #29204f) !important;
+  border: 1px solid #4b7995 !important;
+  border-radius: 22px !important;
+  box-shadow: 0 16px 45px #00000030, inset 0 1px #ffffff12 !important;
+  overflow: hidden;
+}
+
+.welcome h1,
+.welcome h2,
+.welcome h3,
+.welcome p,
+.welcome span {
+  color: #ffffff !important;
+}
+
+/* Metric cards and panels */
+.metric,
+.panel,
+.card,
+.product-card,
+.stat-card {
+  color: var(--text) !important;
+  background: linear-gradient(145deg, #19243b, #121b2e) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 28px #00000020, inset 0 1px #ffffff08 !important;
+}
+
+.metric:hover,
+.panel:hover,
+.product-card:hover {
+  border-color: #4b7c91 !important;
+  box-shadow: 0 12px 32px #00000030, 0 0 18px #42e8d40b !important;
+}
+
+.metric-value,
+.metric strong,
+.metric h2,
+.metric h3,
+.panel h2,
+.panel h3,
+.product-name {
+  color: #f2f6ff !important;
+}
+
+.metric-value {
+  font-size: 27px !important;
+  font-weight: 750 !important;
+}
+
+.metric-label {
+  color: var(--muted) !important;
+}
+
+/* Navigation */
+nav button,
+.sidebar button,
+.nav-item {
+  color: #aab8d2 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+}
+
+nav button:hover,
+.sidebar button:hover,
+.nav-item:hover {
+  color: #ffffff !important;
+  background: #263652 !important;
+}
+
+nav button.active,
+.sidebar button.active,
+.nav-item.active {
+  color: var(--teal) !important;
+  background: #42e8d414 !important;
+  border-color: #42e8d44d !important;
+}
+
+/* Buttons */
+button.primary,
+button[type="submit"],
+.btn-primary,
+.primary-button {
+  color: #071722 !important;
+  background: linear-gradient(110deg, #42e8d4, #7cebdc) !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  font-weight: 750 !important;
+  box-shadow: 0 5px 18px #42e8d426 !important;
+}
+
+button.secondary,
+.btn-secondary,
+.secondary-button {
+  color: #dce6ff !important;
+  background: #24324b !important;
+  border: 1px solid #3a4c6b !important;
+  border-radius: 10px !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea,
+.field {
+  color: #edf3ff !important;
+  background: #0d1628 !important;
+  border: 1px solid #33435f !important;
+  border-radius: 10px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7385a5 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px #42e8d41c !important;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  color: var(--text) !important;
+  border-collapse: collapse;
+}
+
+thead,
+th {
+  color: #aabbd8 !important;
+  background: #101a2d !important;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  border-bottom: 1px solid #2b3855 !important;
+  text-align: left;
+}
+
+td {
+  color: #dce5f7 !important;
+}
+
+tbody tr {
+  background: #151f33 !important;
+}
+
+tbody tr:nth-child(even) {
+  background: #18243a !important;
+}
+
+tbody tr:hover {
+  background: #20324a !important;
+}
+
+/* Status badges */
+.badge,
+.status,
+.pill {
+  border-radius: 999px !important;
+  font-weight: 650 !important;
+}
+
+.success,
+.badge-success,
+.status-success {
+  color: #6ef0bd !important;
+  background: #164b3b !important;
+}
+
+.warning,
+.badge-warning,
+.status-warning {
+  color: #ffd580 !important;
+  background: #4b381b !important;
+}
+
+.danger,
+.badge-danger,
+.status-danger {
+  color: #ff9da8 !important;
+  background: #4b2432 !important;
+}
+
+/* Charts */
+svg text {
+  fill: #aebed9;
+}
+
+svg {
+  max-width: 100%;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b4d6d #10182a;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #10182a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3b4d6d;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px !important;
+  }
+
+  .metric,
+  .panel,
+  .card {
+    border-radius: 14px !important;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+/* FESTIVAL RUSH — DARK SIDEBAR + LIGHT CONTENT */
+
+body,
+#root {
+  background: #f3f5fb !important;
+  color: #202b45 !important;
+}
+
+/* Dark left sidebar */
+.sidebar,
+aside {
+  background: linear-gradient(180deg, #111a30, #172440) !important;
+  color: #eef3ff !important;
+  border-right: 1px solid #263652 !important;
+  box-shadow: 5px 0 25px #17244012 !important;
+}
+
+.sidebar *,
+aside * {
+  color: #dbe5fa;
+}
+
+.sidebar button,
+aside button,
+nav button,
+.nav-item {
+  color: #b8c6df !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+}
+
+.sidebar button:hover,
+aside button:hover,
+nav button:hover,
+.nav-item:hover {
+  color: #ffffff !important;
+  background: #263754 !important;
+}
+
+.sidebar button.active,
+aside button.active,
+nav button.active,
+.nav-item.active {
+  color: #58ead8 !important;
+  background: #35d9c51c !important;
+  border-color: #35d9c545 !important;
+}
+
+/* Light right content area */
+.main,
+.content,
+main {
+  background: #f3f5fb !important;
+  color: #202b45 !important;
+}
+
+.topbar {
+  background: #ffffff !important;
+  color: #202b45 !important;
+  border-bottom: 1px solid #e1e6f0 !important;
+  box-shadow: 0 3px 15px #26375408 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.top-title {
+  color: #202b45 !important;
+}
+
+p,
+label,
+small {
+  color: #65728c;
+}
+
+/* White cards */
+.metric,
+.panel,
+.card,
+.product-card,
+.stat-card {
+  background: #ffffff !important;
+  color: #202b45 !important;
+  border: 1px solid #e5e9f3 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 7px 24px #25365a0c !important;
+}
+
+.metric:hover,
+.panel:hover,
+.product-card:hover {
+  border-color: #b7b9f8 !important;
+  box-shadow: 0 10px 28px #6d70cf16 !important;
+}
+
+.metric-value,
+.metric strong,
+.metric h2,
+.metric h3,
+.product-name {
+  color: #202b45 !important;
+}
+
+/* Welcome banner stays colorful */
+.welcome {
+  background: linear-gradient(
+    120deg,
+    #263a65,
+    #5146a5,
+    #387d9c
+  ) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 28px #5146a526 !important;
+}
+
+.welcome h1,
+.welcome h2,
+.welcome h3,
+.welcome p,
+.welcome span {
+  color: #ffffff !important;
+}
+
+/* Tables */
+table {
+  color: #202b45 !important;
+}
+
+thead,
+th {
+  background: #eef1fa !important;
+  color: #596782 !important;
+}
+
+td {
+  color: #35415c !important;
+  border-bottom: 1px solid #e9edf5 !important;
+}
+
+tbody tr,
+tbody tr:nth-child(even) {
+  background: #ffffff !important;
+}
+
+tbody tr:hover {
+  background: #f4f3ff !important;
+}
+
+/* Form controls */
+input,
+select,
+textarea,
+.field {
+  background: #ffffff !important;
+  color: #202b45 !important;
+  border: 1px solid #dce2ef !important;
+  border-radius: 9px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8175e8 !important;
+  box-shadow: 0 0 0 3px #8175e81c !important;
+}
+
+/* Buttons */
+button.primary,
+button[type="submit"],
+.btn-primary,
+.primary-button {
+  background: linear-gradient(110deg, #4d5bd4, #7667e8) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9px !important;
+}
+
+button.secondary,
+.btn-secondary,
+.secondary-button {
+  background: #eef1fa !important;
+  color: #34415f !important;
+  border: 1px solid #dfe5f1 !important;
+}
+
+/* Charts */
+svg text {
+  fill: #65728c !important;
+}
+
+}
